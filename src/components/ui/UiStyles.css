@@ -1,0 +1,243 @@
+.loader-wrapper{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spinner {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    border: 4px solid #0000;
+    border-radius: 50%;
+    border-right-color: #FD5526;
+    animation: spinner-a4dj62 1s infinite linear;
+   }
+   
+   .spinner::before,
+   .spinner::after {
+    content: "";
+    grid-area: 1/1;
+    margin: 2px;
+    border: inherit;
+    border-radius: 50%;
+    animation: spinner-a4dj62 2s infinite;
+   }
+   
+   .spinner::after {
+    margin: 8px;
+    animation-duration: 3s;
+   }
+   
+   @keyframes spinner-a4dj62 {
+    100% {
+     transform: rotate(1turn);
+    }
+   }
+
+
+
+   /* Navbar */
+   
+
+   .navbar {
+    padding: 1rem 3rem 1rem 5rem;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    gap:20%;
+    z-index: 2;
+    transition: all 0.5s;
+    top: 0;
+    left: 0;
+  }
+
+  .navbar .logo img{
+    width: 120px;
+    object-fit: contain;
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+
+  .navbar ul {
+    list-style: none;
+    text-decoration: none;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 4px;
+    width: 100%;
+  }
+  .navbar ul a.btn {
+    text-decoration: none;
+    padding: 0.2rem 1rem;
+    background-color: inherit;
+    color: var(--color);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      background-color: none;
+      border-bottom: 1px solid var(--primary-color);
+      color: var(--background-color);
+    }
+  }
+  .navbar ul li {
+    color: var(--color);
+
+    font-size: 1.3rem;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+    &:hover {
+      color: var(--primary);
+    }
+  }
+
+  .navbar .loginbtn{
+    background-color: var(--text) !important;
+    color: var(--white) !important;
+    border-radius: 5px !important;
+    padding: .4rem 1rem !important;
+  }
+  
+  .navbar.scrolled{
+      background-color:var(--background);
+  }
+  
+  .navbar.scrolled *{
+    color: var(--primary) !important;
+  }
+  
+  
+  
+  .drawer-menu {
+    background-color: var(--background) !important;
+  }
+  .drawer-menu * {
+    color: var(--color) !important;
+    background-color: var(--background) !important;
+    font-size: 2rem !important;
+  }
+  
+  .drawer-menu .backbtn{
+    position: absolute;
+    top:3%;
+    right:0%;
+    border: none;
+  
+  }
+  .drawer-menu ul{
+    margin-top: 5rem;
+    list-style: none ;
+    display: flex;
+    flex-direction: column;
+  }
+  .drawer-menu ul a {
+    border : none;
+    margin: 1rem 0;
+    transition: all 1s ease-in-out;
+    &:hover{
+      border : none;
+    
+    }
+  }
+  .drawer-menu ul a *{
+      font-size: 2rem !important;
+      &:hover{
+        color: var(--primary) !important;
+      }
+  }
+  .menu-icon{
+    font-size: 1.8rem !important;
+    cursor: pointer;
+    &:hover{
+      color: var(--primary);
+        border : none;
+    }
+  }
+  .mobile-nav {
+    display: flex;
+    padding: 2rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background);
+    z-index: 1;
+  }
+  .mobile-nav .btn {
+    border: none;
+  }
+  .none {
+    display: none;
+  }
+  
+  @media (max-width: 1224px){
+    .navbar{
+      padding: 1rem 3rem;
+      width:98% ;
+    }
+    .navbar ul li{
+      color: black;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar {
+      gap: 0;
+      justify-content: space-between;
+      padding: 1.5rem 1rem;
+      gap: 35%;
+    }
+    .navbar ul {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--background);
+      display: none;
+      
+    }
+    .navbar .logo * {
+      font-size: 2rem;
+      white-space: wrap;
+    }
+    .navbar h1 {
+      font-size: 1.5rem;
+    }
+    .navbar ul li {
+      font-size: 1.5rem;
+      white-space: nowrap;
+            color: red !important;
+    }
+    .navbar ul a.btn {
+      font-size: 1.3rem;
+   
+    }
+    .drawer-menu .backbtn{
+      border: none;
+      outline: none;
+      &:hover{
+        border: none !important;
+        outline: none !important;
+        transform: scale(1.1);
+      }
+    }
+    .drawer-menu {
+      display: block;
+    }
+  }

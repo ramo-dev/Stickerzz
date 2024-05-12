@@ -54,7 +54,7 @@
     border : 2px solid var(--secondary);
     padding: 0 0 0 .7rem ;
     height: 2.8rem;
-    width: 270px;
+    width: 300px;
     display: flex;
     align-items: center;
     gap: .5rem;
@@ -77,9 +77,9 @@
 
 .Error{
     position: absolute;
-    padding: 0 .3rem ;
+    padding: 0 .1rem ;
     top : -9px;
-    background-color: var(--background);
+    background: linear-gradient(to bottom, var(--background), var(--white));
     transition: 0.4s ease-in-out;
     color:red;
     left: 0%;

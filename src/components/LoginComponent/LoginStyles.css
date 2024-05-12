@@ -25,9 +25,10 @@
 .LoginForm a > img{
     object-fit: contain;
     width: 10rem;
-    margin : 0 0 4rem 0
+    
 }
 .LoginForm form{
+    margin : 6% 0 0 0;
     gap: 2rem;
     display: flex;
     flex-direction: column;
@@ -38,5 +39,13 @@
 @media screen and (max-width : 850px) {
     .LoginComponent .LoginWallpaper{
         display: none;
+    }
+    .LoginForm a > img{
+        object-fit: contain;
+        width: 9rem;
+        
+    }
+    .LoginComponent form{
+        margin : 15% 0 0 0;
     }
 }

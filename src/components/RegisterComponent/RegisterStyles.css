@@ -25,9 +25,10 @@
 .RegisterForm a > img{
     object-fit: contain;
     width: 10rem;
-    margin : 0 0 4rem 0
+   
 }
 .RegisterForm form{
+    margin : 3% 0 0 0;
     gap: 2rem;
     display: flex;
     flex-direction: column;
@@ -47,5 +48,12 @@
 @media screen and (max-width : 850px) {
     .RegisterComponent .RegisterWallpaper{
         display: none;
+    }
+    .RegisterForm a > img{
+        object-fit: contain;
+        width: 9rem;
+    }
+    .RegisterForm form{
+        margin : 10% 0 0 0;
     }
 }

@@ -1,16 +1,26 @@
 // eslint-disable-next-line no-unused-vars
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Home from './routes/Home'
 import Login from './routes/Login'
-import Register from './routes/Register'
+import Register from './routes/Register';
+import Loader from './components/ui/Loader';
 import {Routes ,Route, BrowserRouter} from "react-router-dom";
-import "./App.css"
+import "./App.css";
 
 function App() {
+const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(()=>{
+    const timer = setTimeout(()=>{
+      setIsLoading(false);
+    },2000)
+    return () => clearTimeout(timer)
+  },[])
 
 
   return (
-    <BrowserRouter>
+    isLoading ? <Loader/> : (
+      <BrowserRouter>
       <Routes>
         <Route path="/" Component={Home}/>
         <Route path="/login" Component={Login}/>
@@ -18,6 +28,7 @@ function App() {
         {/* <Route path="/" component={Home}/> */}
       </Routes>
     </BrowserRouter>
+    )
   )
 }
 

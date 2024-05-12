@@ -92,7 +92,7 @@ const RegisterComponent = () => {
           </div>
 
           <div className="input" style={{ borderColor: !match && "red" }} onFocus={handleFocus} onBlur={handleBlur}>
-            {!match && <small className="Error">Passwords dont match</small>}
+            {!match && <small className="Error">Passwords dont match*</small>}
             <LockClosedIcon />
             <input
               type="password"
